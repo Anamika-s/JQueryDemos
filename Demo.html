@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      .important {
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+.blue {
+  color: blue;
+}
+      div {
+        background-color: red;
+        height: 100px;
+        border: 1px solid green;  
+      }
+    </style>
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  </head>
+  <body>
+    <h1 class="p1"> Heading One </h1>
+    <p class="p1"> Para 1 </p>
+    <p> Para 2 </p>
+    <p> Para 3</p>
+    <div id="div1" style="width:80px;height:80px;display:none;background-color:red;"> Div 1 </div>
+    <div id="div2" style="width:80px;height:80px;display:none;background-color:rgb(132, 0, 255);"> Div 2 </div>
+    <div id="div3" style="width:80px;height:80px;display:none;background-color:rgb(0, 255, 42);"> Div 3 </div>
+    <button type="button" id="btnHide" > Hide </button>
+    <button type="button" id="btnShow"> Show </button>
+    <button type="button" id="btnToggle"> Toggle </button>
+    <button type="button" id="btnFade"> Fade </button>
+    <br>
+    <button type="button" id="btnAddClass"> Add Class </button>
+    <script>
+      $(function()
+      {
+        $("#btnHide").click(function()
+        {
+          $("p").hide(10000);
+        });
+
+        $("#btnShow").click(function()
+        {
+          $("p").show(100);
+        });
+
+        $("#btnToggle").click(function()
+        {
+          $("p").toggle();
+        });
+
+        $("#btnFade").click(function(){
+          console.log("Inside ");
+        $("#div1").fadeIn();
+        $("#div2").fadeIn("slow");
+        $("#div3").fadeIn(3000);
+        });
+
+        $(".p1").mouseenter(function()
+        {
+ console.log("You entered mouse");
+        });
+        $(".p1").mouseleave(function()
+        {
+ console.log("You left mouse");
+        });
+
+
+        $("#btnAddClass").click(function(){
+  $("h1, h2, p").addClass("blue");
+  $("div").addClass("important");
+});
+      })
+    </script>
+  </body>
+</html>
